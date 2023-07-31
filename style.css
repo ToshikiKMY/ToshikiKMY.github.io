@@ -186,9 +186,10 @@ nav {
 }
 
 aside {
+  text-align: left;
   border-radius: 10px;
   background-color: #fff;
-  padding: 5px 5px;
+  padding: 5px;
   display: none;
   margin-top: 20px;
 }
@@ -221,9 +222,13 @@ p {
   margin-bottom: 15px;
 }
 
+ul {
+  list-style: none;
+}
+
 ul,
 ol {
-  margin-left: 50px;
+  margin-left: 30px;
   /* margin-bottom: 20px; */
 }
 
@@ -254,6 +259,22 @@ nav a:link {
   text-decoration: none;
 }
 
+aside a:link {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+aside a:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+aside a:hover {
+  background-color: #edeeee;
+}
+
 .foot-container {
   height: 200px;
 }
@@ -272,13 +293,79 @@ footer {
   font-size: 40px;
 }
 
-.footer-message {
-}
-
-.footer-log {
-}
-
 #copyright {
   font-size: 15px;
   margin-top: 20px;
+}
+
+/* setting */
+#setting {
+  width: 500px;
+  margin: 0 auto;
+}
+
+/* game */
+td {
+  border: solid 3px white;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.flag::before {
+  font-family: "Material Icons";
+  content: "\e153";
+  animation: fadein 0.3s;
+}
+
+.bomb {
+  background: red;
+}
+
+.bomb::before {
+  font-family: "Material Icons";
+  content: "\ea0b";
+}
+
+.clear::before {
+  font-family: "Material Icons";
+  content: "\e545";
+}
+.bombCount::before {
+  font-size: 24px;
+  font-family: "Material Icons";
+  content: "\ea0b";
+}
+
+#result {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  text-align: center;
+}
+
+.remaining-number-of-bomb {
+  font-size: 18px;
+}
+
+#board {
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: yellowgreen;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.open {
+  background: #e7e7e7;
+}
+
+.clear {
+  background: red;
 }
