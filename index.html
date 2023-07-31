@@ -1,27 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>基礎コース20日間の成果</title>
 
-<head>
-  <title>Pokemon</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="theme-color" content="#000000">
-  <script type="text/javascript" src="allPokemon.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-  <style>
-    body {
-      font-family: monospace;
-    }
-  </style>
-</head>
+    <style>
+      canvas {
+        border: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <a id="qllta" href="#">Qllta</a>
 
-<body>
-  <h1>プログラミング基礎へようこそ！</h1>
-  <h3>Mac をお使いの方は、 <font color="blue"> Cmd + Option + J</font><br>
-    Windows/Linux をお使いの方は、 <font color="blue"> Control+Shift+J</font> <br>
-    をクリックして、デベロッパーツールを開いてください。</h3>
-  <h3>下記にユニコーンの画像が表示されていれば成功です！</h3>
-  <img src="https://cdn.dribbble.com/users/1281272/screenshots/4515441/unicorn.gif">
-</body>
+      <div class="search-login">
+        <div class="form">
+          🔍<input type="text" class="search" placeholder="記事を検索" />
+        </div>
+        <a id="login" href="#">ログイン</a>
+        <a id="register" href="#">新規登録</a>
+      </div>
 
+      <nav>
+        <a href="#">トレンド</a>
+        <a href="#">質問</a>
+        <a href="#">公式イベント</a>
+        <a href="#">公式コラム</a>
+        <a href="#">募集</a>
+        <a href="#">Organization</a>
+        <a href="#">Engineer Festa</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div id="icons">
+        <a href="#"
+          ><img
+            id="favorite"
+            src="picture/heart.png"
+            alt="favorite"
+            height="30"
+            width="30"
+        /></a>
+        <a>
+          <img
+            id="twitter"
+            class="overlay-event"
+            src="picture/twitter.png"
+            alt="favorite"
+            height="30"
+            width="30"
+        /></a>
+        <a href="#"
+          ><img
+            id="facebook"
+            src="picture/facebook.png"
+            alt="favorite"
+            height="30"
+            width="30"
+        /></a>
+      </div>
+
+      <div id="overlay" class="overlay-event">
+        <div class="flex">
+          <div id="overlay-inner">
+            <p>overlay</p>
+          </div>
+        </div>
+      </div>
+
+      <article>
+        <header class="post-header">
+          <a href="#"
+            ><img
+              id="icon"
+              src="picture/icon2.jpg"
+              alt="顔写真"
+              height="50px"
+              width="50px"
+          /></a>
+          <a>@Toshiki Kamiya</a>
+          <h2>基礎コース20日間の成果 -できるようになったこと-</h2>
+        </header>
+
+        <h3>今回の課題で実施したかったこと</h3>
+
+        <ol>
+          <li>実際のサイトを模倣する</li>
+          <a
+            >JavaScriptの関数は割とできるようになってきたけど、CSS、HTMLは自信がない・・・</a
+          >
+          <li>
+            ブラウザ上で入力、入力されたデータを処理して、ブラウザ上にフィードバック
+          </li>
+          <li>JavaScriptの関数をモリモリ使ったゲーム（断念）</li>
+        </ol>
+
+        <h3>実際のサイトの模倣</h3>
+        <ol type="i">
+          <li>思ってるよりdivタグが多用されている</li>
+          <li>
+            ウインドウサイズに合わせてスタイルを整えるとユーザーが使いやすそう
+          </li>
+          <li>stickyを使うとなんかいろいろできそう</li>
+          <li>オーバーレイを使うとそれっぽく見える</li>
+          <li>シンプルなページを作るだけならJavaScriptを使わなくてもいい</li>
+        </ol>
+
+        <h3>入力と出力</h3>
+        <table border="1">
+          <tr>
+            <th>車両</th>
+            <th>仕向</th>
+            <th>仕向</th>
+            <th>仕向</th>
+            <th>仕向</th>
+            <th>仕向</th>
+            <th>仕向</th>
+          </tr>
+          <tr>
+            <td><datalist name="name"></datalist></td>
+            <td>27</td>
+          </tr>
+          <tr>
+            <td>佐藤</td>
+            <td>42</td>
+          </tr>
+        </table>
+      </article>
+
+      <aside>
+        <ol>
+          <li>はじめに</li>
+          <li>テスト</li>
+          <li>テスト</li>
+        </ol>
+      </aside>
+    </div>
+
+    <div class="footer-container">
+      <footer>
+        <div class="footer-global">
+          <p class="footer-logo">Qllta</p>
+          <a class="footer-message">How developers code is here.</a>
+          <p id="copyright" class="copyright text">&copy; 2023 by Kamiya.</p>
+        </div>
+        <div class="footer-links"></div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
