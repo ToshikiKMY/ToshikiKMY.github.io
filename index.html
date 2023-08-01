@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>基礎コース20日間の成果</title>
 
@@ -67,7 +68,8 @@
       <div id="overlay" class="overlay-event">
         <div class="flex">
           <div id="overlay-inner">
-            <p>overlay</p>
+            <p>クリックすることで、クラスを変更</p>
+            <p>display : visible ⇔ hidden　の切替を実施</p>
           </div>
         </div>
       </div>
@@ -104,6 +106,8 @@
           <li>思ってるよりdivタグが多用されている</li>
           <li>
             ウインドウサイズに合わせてスタイルを整えるとユーザーが使いやすそう
+            <br />
+            （レスポンシブっていうんですって）
           </li>
           <li>stickyを使うとなんかいろいろできそう</li>
           <li>オーバーレイを使うとそれっぽく見える</li>
@@ -111,6 +115,11 @@
         </ol>
 
         <h3 id="headline3">入力と出力</h3>
+        <ol type="i">
+          <li>スライダーにて値を取得</li>
+          <li>Chart.js（オープンソースのライブラリ）を使ってグラフを描画</li>
+        </ol>
+
         <div class="slidecontainer" id="sliders">
           <input
             type="range"
@@ -146,8 +155,6 @@
           style="position: relative; height: 400px; width: 800px"
         >
           <canvas id="myChart"></canvas>
-
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
         </div>
 
         <h3 id="headline4">簡単なゲームをつくる</h3>
@@ -166,6 +173,20 @@
           <button id="start-button">START</button>
         </div>
         <table id="board"></table>
+
+        <h3 id="headline3">参考サイト</h3>
+        <ul>
+          <li>
+            <a href="https://qiita.com/Haruka-Ogawa/items/59facd24f2a8bdb6d369"
+              >Chart.jsでグラフを描画してみた
+            </a>
+          </li>
+          <li>
+            <a href="https://bubudoufu.com/minesweeper/"
+              >JavaScriptでマインスイーパを作ってみる</a
+            >
+          </li>
+        </ul>
       </article>
 
       <aside>
