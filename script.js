@@ -20,38 +20,22 @@ const overlayInner = document.getElementById("overlay-inner");
 overlayInner.addEventListener("click", stopEvent, false);
 
 // グラフ作成-------------------------------------------------
-const xs = [];
-for (let i = -20; i < 21; i++) {
-  xs.push(i * 0.1);
-} // xs = [-2.0, -1.9, -1.8, .... 2.0]  x:-2~2の範囲でプロットする
-function calc_ys(xs, a, b, c) {
-  // yの座標を計算するための関数
-  return xs.map((x) => a * x * x + b * x + c);
-}
+let red = document.getElementById("slider_a").value; // sliderの値を取得
+let green = document.getElementById("slider_b").value;
+let blue = document.getElementById("slider_c").value;
 
-const ctx = document.getElementById("myChart").getContext("2d");
+const ctx = document.getElementById("myChart");
 let myChart = new Chart(ctx, {
-  type: "line",
-  field: {
-    labels: xs, // x座標の配列
+  type: "doughnut",
+  data: {
+    labels: ["Red", "Green", "Blue"],
     datasets: [
       {
-        label: "ax^2 + bx + c",
-        field: calc_ys(xs, 0, 0, 0), // y座標の配列（初期化するときには、a=b=c=0と仮にしている）
+        data: [red, green, blue],
+        backgroundColor: ["#f88", "#484", "#48f"],
+        weight: 100,
       },
     ],
-  },
-  options: {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            min: -4,
-            max: 4, // yについて[-4,4]の範囲で描画するように固定。これがないと、データの値に応じて表示領域が変わってしまう。
-          },
-        },
-      ],
-    },
   },
 });
 
@@ -65,12 +49,8 @@ sliders.addEventListener(
     document.getElementById("val_a").textContent = a; // 取得した値を"#val_a"のテキストに表示
     document.getElementById("val_b").textContent = b;
     document.getElementById("val_c").textContent = c;
-    myChart.field.datasets[0].field = calc_ys(
-      xs,
-      Number(a),
-      Number(b),
-      Number(c)
-    ); // プロットのy座標のデータを新しいもので置き換える。
+    console.log(myChart);
+    myChart.data.datasets[0].data = [Number(a), Number(b), Number(c)]; // プロットのy座標のデータを新しいもので置き換える。
     myChart.update(); // 新しいデータを反映させる
   },
   false
@@ -163,8 +143,6 @@ const primaryClicked = function () {
   }
 };
 
-// const seconderyClicked = function () {};
-
 // startボタン押したときの初期化関数
 const init = function () {
   vertical = Number(document.getElementById("vertical").value); //縦マス
@@ -182,6 +160,7 @@ const init = function () {
   board.style.pointerEvents = "auto";
   messageNumBombs.textContent = `残り: ${settedBombs}個`;
   button.textContent = "reset";
+  result.textContent = "";
 
   // 配列を表で吐き出し
   for (let i = 0; i < vertical; i++) {
@@ -203,8 +182,8 @@ const messageNumBombs = document.getElementById("remaining-bombs");
 const result = document.getElementById("result");
 
 // 右クリック 旗を置く
-function seconderyClicked(e) {
-  e.preventDefault();
+const seconderyClicked = function (event) {
+  event.preventDefault();
   if (this.className === "open") {
     return;
   }
@@ -215,7 +194,7 @@ function seconderyClicked(e) {
     remainingBombs++;
   }
   messageNumBombs.textContent = `残り: ${remainingBombs}個`;
-}
+};
 
 // マスを開く
 function open(y, x) {
@@ -223,10 +202,7 @@ function open(y, x) {
     for (let j = x - 1; j <= x + 1; j++) {
       if (i >= 0 && i < vertical && j >= 0 && j < horizontal) {
         let aroundBombs = countBomb(i, j);
-        if (
-          board.rows[i].cells[j].className === "open" ||
-          board.rows[i].cells[j].className === "flag"
-        ) {
+        if (board.rows[i].cells[j].className === "open") {
           continue;
         }
         if (aroundBombs === 0) {
@@ -242,7 +218,7 @@ function open(y, x) {
 }
 
 // 空いているマスを数える
-function countOpenCell() {
+const countOpenCell = function () {
   let openCell = 0;
   for (let i = 0; i < vertical; i++) {
     for (let j = 0; j < horizontal; j++) {
@@ -254,4 +230,4 @@ function countOpenCell() {
   if (vertical * horizontal - openCell === settedBombs) {
     return true;
   }
-}
+};

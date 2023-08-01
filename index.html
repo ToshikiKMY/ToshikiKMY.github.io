@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
     <title>基礎コース20日間の成果</title>
 
     <style>
@@ -36,175 +40,193 @@
       </nav>
     </header>
 
-    <div class="container">
-      <div id="icons">
-        <a href="#"
-          ><img
-            id="favorite"
-            src="picture/heart.png"
-            alt="favorite"
-            height="30"
-            width="30"
-        /></a>
-        <a>
-          <img
-            id="twitter"
-            class="overlay-event"
-            src="picture/twitter.png"
-            alt="favorite"
-            height="30"
-            width="30"
-        /></a>
-        <a href="#"
-          ><img
-            id="facebook"
-            src="picture/facebook.png"
-            alt="favorite"
-            height="30"
-            width="30"
-        /></a>
-      </div>
-
-      <div id="overlay" class="overlay-event">
-        <div class="flex">
-          <div id="overlay-inner">
-            <p>クリックすることで、クラスを変更</p>
-            <p>display : visible ⇔ hidden　の切替を実施</p>
-          </div>
-        </div>
-      </div>
-
-      <article>
-        <header class="post-header">
+    <div class="main-body">
+      <div class="container">
+        <div id="icons">
           <a href="#"
             ><img
-              id="icon"
-              src="picture/icon2.jpg"
-              alt="顔写真"
-              height="50px"
-              width="50px"
+              id="favorite"
+              src="picture/heart.png"
+              alt="favorite"
+              height="30"
+              width="30"
           /></a>
-          <a>@Toshiki Kamiya</a>
-          <h2>基礎コース20日間の成果 -できるようになったこと-</h2>
-        </header>
-
-        <h3 id="headline1">今回の課題で実施したかったこと</h3>
-
-        <ol>
-          <li>実際のサイトを模倣する</li>
-          <a
-            >JavaScriptの関数は割とできるようになってきたけど、CSS、HTMLは自信がない・・・</a
-          >
-          <li>
-            ブラウザ上で入力、入力されたデータを処理して、ブラウザ上にフィードバック
-          </li>
-          <li>簡単なゲームをつくる</li>
-        </ol>
-
-        <h3 id="headline2">実際のサイトの模倣</h3>
-        <ol type="i">
-          <li>思ってるよりdivタグが多用されている</li>
-          <li>
-            ウインドウサイズに合わせてスタイルを整えるとユーザーが使いやすそう
-            <br />
-            （レスポンシブっていうんですって）
-          </li>
-          <li>stickyを使うとなんかいろいろできそう</li>
-          <li>オーバーレイを使うとそれっぽく見える</li>
-          <li>シンプルなページを作るだけならJavaScriptを使わなくてもいい</li>
-        </ol>
-
-        <h3 id="headline3">入力と出力</h3>
-        <ol type="i">
-          <li>スライダーにて値を取得</li>
-          <li>Chart.js（オープンソースのライブラリ）を使ってグラフを描画</li>
-        </ol>
-
-        <div class="slidecontainer" id="sliders">
-          <input
-            type="range"
-            min="-1"
-            max="1"
-            value="0"
-            step="0.1"
-            class="slider"
-            id="slider_a"
-          />a : <span id="val_a">0</span><br />
-          <input
-            type="range"
-            min="-1"
-            max="1"
-            value="0"
-            step="0.1"
-            class="slider"
-            id="slider_b"
-          />b : <span id="val_b">0</span><br />
-          <input
-            type="range"
-            min="-1"
-            max="1"
-            value="0"
-            step="0.1"
-            class="slider"
-            id="slider_c"
-          />c : <span id="val_c">0</span><br />
+          <a>
+            <img
+              id="twitter"
+              class="overlay-event"
+              src="picture/twitter.png"
+              alt="favorite"
+              height="30"
+              width="30"
+          /></a>
+          <a href="#"
+            ><img
+              id="facebook"
+              src="picture/facebook.png"
+              alt="favorite"
+              height="30"
+              width="30"
+          /></a>
         </div>
 
-        <div
-          class="chart-container"
-          style="position: relative; height: 400px; width: 800px"
-        >
-          <canvas id="myChart"></canvas>
+        <div id="overlay" class="overlay-event">
+          <div class="flex">
+            <div id="overlay-inner">
+              <p>クリックしたときに</p>
+              <p>target.classList.toggle()を使うことでクラスを変更</p>
+              <p>display : visible ⇔ hidden　の切替を実施</p>
+            </div>
+          </div>
         </div>
 
-        <h3 id="headline4">簡単なゲームをつくる</h3>
-        <p class="center">マインスイーパー</p>
-        <div id="setting" class="center">
-          V
-          <input type="number" id="vertical" value="9" min="1" max="25" />
-          H
-          <input type="number" id="horizontal" value="9" min="1" max="25" />
-          B
-          <input type="number" id="setted-bombs" value="10" min="1" max="625" />
-        </div>
-        <div class="center">
-          <p id="remaining-bombs">残り:0</p>
-          <p id="result"></p>
-          <button id="start-button">START</button>
-        </div>
-        <table id="board"></table>
+        <article>
+          <header class="post-header">
+            <a href="#"
+              ><img
+                id="icon"
+                src="picture/icon2.jpg"
+                alt="顔写真"
+                height="50px"
+                width="50px"
+            /></a>
+            <a>@Toshiki Kamiya</a>
+            <h2>基礎コース20日間の成果 -できるようになったこと-</h2>
+          </header>
 
-        <h3 id="headline3">参考サイト</h3>
-        <ul>
-          <li>
-            <a href="https://qiita.com/Haruka-Ogawa/items/59facd24f2a8bdb6d369"
-              >Chart.jsでグラフを描画してみた
-            </a>
-          </li>
-          <li>
-            <a href="https://bubudoufu.com/minesweeper/"
-              >JavaScriptでマインスイーパを作ってみる</a
+          <h3 id="headline1">今回の課題で実施したかったこと</h3>
+
+          <ol>
+            <li>実際のサイトを模倣する</li>
+            <a
+              >JavaScriptの関数は割とできるようになってきたけど、CSS、HTMLは自信がない・・・</a
             >
-          </li>
-        </ul>
-      </article>
+            <li>
+              ブラウザ上で入力。入力されたデータを処理して、ブラウザ上にフィードバック
+            </li>
+            <li>簡単なゲームをつくる</li>
+          </ol>
 
-      <aside>
-        <ul>
-          <li>
-            <a href="#headline1">今回の課題で実施したかったこと</a>
-          </li>
-          <li>
-            <a href="#headline2">実際のサイトの模倣</a>
-          </li>
-          <li>
-            <a href="#headline3">入力と出力</a>
-          </li>
-          <li>
-            <a href="#headline4">簡単なゲームをつくる</a>
-          </li>
-        </ul>
-      </aside>
+          <h3 id="headline2">実際のサイトの模倣</h3>
+          <ol type="i">
+            <li>思ってるよりdivタグが多用されている</li>
+            <li>
+              ウインドウサイズに合わせてスタイルを整えるとユーザーが使いやすそう
+              <br />
+              （レスポンシブっていうんですって）
+            </li>
+            <li>stickyを使うとなんかいろいろできそう</li>
+            <li>オーバーレイを使うとそれっぽく見える</li>
+            <li>シンプルなページを作るだけならJavaScriptを使わなくてもいい</li>
+          </ol>
+
+          <h3 id="headline3">入力と出力</h3>
+          <ol type="i">
+            <li>スライダーにて値を取得</li>
+            <li>Chart.js（オープンソースのライブラリ）を使ってグラフを描画</li>
+          </ol>
+
+          <div class="slidecontainer" id="sliders">
+            <input
+              type="range"
+              min="0"
+              max="50"
+              value="25"
+              step="1"
+              class="slider"
+              id="slider_a"
+            />Red : <span id="val_a">25</span><br />
+            <input
+              type="range"
+              min="0"
+              max="50"
+              value="25"
+              step="1"
+              class="slider"
+              id="slider_b"
+            />Green : <span id="val_b">25</span><br />
+            <input
+              type="range"
+              min="0"
+              max="50"
+              value="25"
+              step="1"
+              class="slider"
+              id="slider_c"
+            />Blue : <span id="val_c">25</span><br />
+          </div>
+
+          <div
+            class="chart-container"
+            style="position: relative; height: 400px; width: 800px"
+          >
+            <canvas id="myChart"></canvas>
+          </div>
+
+          <h3 id="headline4">簡単なゲームをつくる</h3>
+          <p class="center">マインスイーパー</p>
+          <div id="setting" class="center">
+            V
+            <input type="number" id="vertical" value="9" min="1" max="25" />
+            H
+            <input type="number" id="horizontal" value="9" min="1" max="25" />
+            B
+            <input
+              type="number"
+              id="setted-bombs"
+              value="10"
+              min="1"
+              max="625"
+            />
+          </div>
+          <div class="center">
+            <p id="remaining-bombs">残り:0</p>
+            <p id="result"></p>
+            <button id="start-button">START</button>
+          </div>
+          <table id="board"></table>
+
+          <h3 id="headline5">参考サイト</h3>
+          <ul>
+            <li>
+              <a
+                href="https://qiita.com/Haruka-Ogawa/items/59facd24f2a8bdb6d369"
+                >Chart.jsでグラフを描画してみた
+              </a>
+            </li>
+            <li>
+              <a href="https://qiita.com/yohm/items/586690bf36efa0838e37"
+                >chart.jsでぐりぐり動くグラフを作る</a
+              >
+            </li>
+            <li>
+              <a href="https://bubudoufu.com/minesweeper/"
+                >JavaScriptでマインスイーパを作ってみる</a
+              >
+            </li>
+          </ul>
+        </article>
+
+        <aside class="contents">
+          <ul>
+            <li>
+              <a href="#headline1">今回の課題で実施したかったこと</a>
+            </li>
+            <li>
+              <a href="#headline2">実際のサイトの模倣</a>
+            </li>
+            <li>
+              <a href="#headline3">入力と出力</a>
+            </li>
+            <li>
+              <a href="#headline4">簡単なゲームをつくる</a>
+            </li>
+            <li>
+              <a href="#headline5">参考サイト</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
     </div>
 
     <div class="footer-container">
