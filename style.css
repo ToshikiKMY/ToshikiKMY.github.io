@@ -198,15 +198,15 @@ nav {
   padding-right: 30px;
   display: none;
   margin-top: 20px;
-  display: inline-block;
   vertical-align: top;
 }
 
-@media (min-width: 1150px) {
-  aside {
+@media (min-width: 1320px) {
+  .contents {
     /* background-color: #fff; */
     padding-right: 30px;
     vertical-align: top;
+    display: inline-block;
   }
 }
 
@@ -248,18 +248,19 @@ li {
   height: auto;
 }
 
+nav a:link {
+  margin: 5px 5px;
+  display: inline-block;
+  text-decoration: none;
+  color: #7a7d7d;
+}
+
 nav a:visited {
   color: #7a7d7d;
 }
 
 nav a:hover {
   color: black;
-}
-
-nav a:link {
-  margin: 5px 5px;
-  display: inline-block;
-  text-decoration: none;
 }
 
 aside a:link {
